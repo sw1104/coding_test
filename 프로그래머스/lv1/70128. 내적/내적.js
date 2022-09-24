@@ -1,9 +1,3 @@
 function solution(a, b) {
-  let arr = [];
-  let count = 0
-	for (let i = 0; i < a.length; i++) {
-      
-    count += a[i] * b[i]
-    }
-  return count
+    return a.reduce((acc, a, i) => acc += a*b[i] ,0)
 }

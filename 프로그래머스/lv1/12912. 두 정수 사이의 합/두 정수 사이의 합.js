@@ -1,16 +1,11 @@
+// const solution = (a, b) => {return (a+b)*(Math.abs(b-a)+1)/2};
+
 function solution(a, b) {
-//     var answer = 0;
-//     if(a === b){
-//         return a
-//     } else if(a < b){
-//         for (let i = a; i <=b; i++){
-//             answer += i
-//         } return answer;
-//     } else if(a > b){
-//         for (let i = b; i <=a; i++){
-//             answer += i
-//     } return answer;
-    
-// }
-    return (a+b)*(Math.abs(b-a)+1)/2;
+  let count = 0
+let arr = [a,b]
+let abc = arr.sort((x, y) => x-y)
+for(let i = abc[0]; i<= abc[1]; i++){
+  count += i
+}
+  return count
 }

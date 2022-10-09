@@ -1,4 +1,10 @@
 function solution(s) {
-    const ss = s.split('').sort().reduce((acc, i) => (acc[i] ? { ...acc, [i]: acc[i] + 1 } : { ...acc, [i]: 1 }), {});
-    return Object.keys(ss).filter(item => ss[item] === 1).join('');
+    let arr = [];
+    let ss = s.split('').sort();
+    for(let i = 0; i < ss.length; i++){
+        if(ss.indexOf(ss[i]) === ss.lastIndexOf(ss[i])){
+            arr.push(ss[i])
+        }
+    }
+    return arr.join('')
 }

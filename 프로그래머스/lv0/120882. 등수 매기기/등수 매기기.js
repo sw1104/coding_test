@@ -1,9 +1,6 @@
-function solution(score) {
-  const avgs = score.map(([a, b]) => (a + b) / 2);
-  const avgRank = [...avgs]
-    .sort((a, b) => b - a)
-    .map((avg, i) => ({ avg, rank: i + 1 }))
-    .map((a, i, arr) => (i > 0 && a.avg === arr[i - 1].avg ? { ...a, rank: arr[i - 1].rank } : a));
-
-  return avgs.map(_avg => avgRank.find(({ avg }) => _avg === avg).rank);
+const solution = s => {
+    const smap = s.map(i => (i[0] + i[1]) / 2)
+    const smsort = smap.slice().sort((a, b) => b - a)
+    const smmap = smap.map(j => smsort.indexOf(j) + 1)
+    return smmap
 }

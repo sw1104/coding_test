@@ -1,0 +1,1 @@
+select mcdp_cd as 진료과코드, count(mcdp_cd) as 5월예약건수 from appointment where date_format(apnt_ymd, '%Y-%m-%d') like '%-05-%' group by 진료과코드 order by count(mcdp_cd), 진료과코드;
